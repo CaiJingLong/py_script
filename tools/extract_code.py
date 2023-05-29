@@ -1,5 +1,6 @@
-# 打开源码目录，提取出指定extension的文件，拼接到指定为止
 # 用于生成一个文件，应该是用于软著
+# 打开源码目录，提取出指定 extension 的文件，拼接到一起，生成一个文件
+# 使用方式，放在 "源码/scripts" 下 ，执行 python extract_code.py 即可
 
 import os
 import sys
@@ -43,6 +44,9 @@ result = f"{cwd}/../logs/result.txt"
 
 if os.path.exists(result):
     os.remove(result)
+
+if os.path.exists(f"{cwd}/../logs"):
+    os.rmdir(f"{cwd}/../logs")
 
 ignore_contents = [
     "Generated file",
